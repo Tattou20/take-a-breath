@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
     top: 0;
     left: 0;
     width: 100%;
-    height: 110vh;
+    height: 115vh;
     background-color: blueviolet;
     z-index: -2;
     /* Combine image and linear gradient */
@@ -34,6 +34,7 @@ body::-webkit-scrollbar {
     /* Set background size for both the image and gradient */
     background-position: 90% 50%, bottom;
     background-repeat: no-repeat;
+    background: linear-gradient(to bottom, blueviolet 20%, #ffffff 95%);
 }
 
 /* Navbar list */
@@ -65,11 +66,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     /* Height of the navigation bar */
     background-color: blueviolet;
     z-index: 2;
     transition: height 0.3s ease-in;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.359);
+
     /* change height on scroll */
 }
 
@@ -81,7 +84,7 @@ header {
     /* Stick it to the top of the page */
     width: 100%;
     /* Occupy the full width of the viewport */
-    height: 10vh;
+    height: 70px;
     /* Set the height of the navbar */
     margin: auto;
     /* Center the navbar horizontally */
@@ -91,6 +94,7 @@ header {
     background-color: blueviolet;
     z-index: 2;
     transition: height 0.3s ease-in-out;
+    
     /* change height on scroll */
 }
 
@@ -197,7 +201,7 @@ header {
 
 /* Hero */
 #hero {
-    height: calc(100vh - 60px);
+    height: calc(90vh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -243,6 +247,34 @@ header {
     width: 155%;
 }
 
+#searchInput{
+    padding: 10px;
+    /* Adjust padding as needed */
+    border: 3px solid rgba(137, 43, 226, 0.327);
+    /* Add border */
+    border-radius: 40px;
+    /* Add border radius */
+    width: 50%;
+}
+
+/*----------------Filters--------------------*/
+
+.filters {
+    margin-bottom: 20px;
+    
+}
+
+.filters label {
+    margin-right: 10px;
+}
+
+.filters select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 3px solid rgba(137, 43, 226, 0.327);
+    font-size: 16px;
+}
+
 /* BLOB effect under search bar */
 .blob {
     position: absolute;
@@ -267,6 +299,31 @@ header {
         inset 100px 100px 0 0px #fa709a, inset 200px 200px 0 0px #784ba8,
         inset 300px 300px 0 0px #2b86c5;
 }
+
+.blob2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(180deg,
+            rgba(47, 186, 255, 0.716) 31.77%,
+            #5c9df1 100%);
+    mix-blend-mode: color-dodge;
+    -webkit-animation: move 10s infinite alternate;
+    animation: move 20s infinite alternate;
+    transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+    z-index: 1;
+}
+
+.blob2:hover {
+    width: 200px;
+    height: 200px;
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+        inset 100px 100px 0 0px #fa709a, inset 200px 200px 0 0px #784ba8,
+        inset 300px 300px 0 0px #2b86c5;
+}
+
 
 @-webkit-keyframes move {
     from {
@@ -353,12 +410,17 @@ header {
 
 /* FOOTER */
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background-color: blueviolet;
     color: white;
     padding: 20px 0;
     text-align: center;
     box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.359);
 }
+
 
 .footer-content {
     max-width: 1200px;
@@ -477,3 +539,103 @@ button:hover {
 .support-section {
     padding: 20px;
 }
+
+    /*------------------ Style for service name----------------- */
+
+
+.section1 {
+    display: flex;
+    background-color: #f9f9f9;
+
+}
+
+#services-list {
+        margin-bottom: 20px;
+        padding:100px 100px 100px 100px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        width: 1000px;
+
+    }
+
+    /* Style for service container */
+    .service-container {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .service-container:hover {
+        box-shadow: 0px 0px 10px 5px rgba(139, 109, 136, 0.103);
+
+    }
+
+
+    .service-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+      /* Style for service name hover */
+      .service-name:hover {
+        color: blueviolet; /* Change color on hover */
+
+    }
+
+    /* Style for service info */
+    .service-info {
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+
+    /* Style for service info paragraphs */
+    .service-info p {
+        margin: 5px 0;
+        
+    }
+
+    /* Style for strong elements inside service info */
+    .service-info strong {
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Show service info when hovering over service name */
+    .service-name:hover + .service-info {
+        display: block;
+    }
+
+    .list-img  {
+        padding-top: 20px;
+    }
+
+
+    .search-filters{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .search-filters div{
+            padding-left: 10px;
+
+        } 
+
+        .filters label{
+            padding-left: 10px;
+
+        } 
+
+        .list-service-inside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+   

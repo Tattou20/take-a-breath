@@ -7,7 +7,7 @@
                         <a class="nav-link " aria-disabled="true" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link " aria-disabled="true" href="{{route('services')}}">Services</a>
+                        <a class="nav-link " aria-disabled="true" href="{{route('servicelist')}}">Services</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link " aria-disabled="true" href="{{route('add-service')}}">Add Service</a>
